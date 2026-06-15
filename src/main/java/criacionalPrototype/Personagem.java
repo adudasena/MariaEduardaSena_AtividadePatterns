@@ -14,4 +14,23 @@ public class Personagem implements Cloneable {
         this.vida = vida;
         this.ataque = ataque;
     }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    @Override
+    public String toString() {
+        return "Nome: " + nome + " | Classe: " + classe + " | Nível: " + nivel + " | Vida: " + vida + " | Ataque: " + ataque;
+    }
+
+    //método clone
+    @Override
+    public Personagem clone() {
+        try {
+            return (Personagem) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new RuntimeException("Erro crítico: A classe não suporta clonagem.", e);
+        }
+    }
 }
